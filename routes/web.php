@@ -1,22 +1,18 @@
 <?php
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
+use Illuminate\Support\Facades\Mail;
+use App\Mail\TestMail;
 // Route::get('/', function () {
 //     return view('client.welcome');
 // });
 
 Route::get('/', 'WelcomeController@frontPage');
 Route::get('/courses', 'WelcomeController@courses')->name('client.courses');
+
+// Test Queue IN server REMOVE IT leater
+Route::get('check-queueu', function() {
+    Mail::to('kassemKu2010@gmail.com')->send(new TestMail());
+    return 'Its DONE';
+});
 
 Auth::routes();
 
