@@ -402,6 +402,7 @@ class ComposerStaticInitb73509cc44763ac3b7f90bfad23a7d6d
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\Manage\\CoursesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Manage/CoursesController.php',
+        'App\\Http\\Controllers\\Manage\\LessonsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Manage/LessonsController.php',
         'App\\Http\\Controllers\\Manage\\ManageController' => __DIR__ . '/../..' . '/app/Http/Controllers/Manage/ManageController.php',
         'App\\Http\\Controllers\\Manage\\PermissionsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Manage/PermissionsController.php',
         'App\\Http\\Controllers\\Manage\\RolesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Manage/RolesController.php',

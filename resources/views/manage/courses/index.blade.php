@@ -24,7 +24,7 @@
 
 <div class="uk-container uk-margin-medium uk-margin-medium-bottom">
   <div class="uk-overflow-auto uk-background-default ee-border">
-    <div class="uk-grid-large uk-child-width-1-2 uk-padding-small" uk-grid>
+    <div class="uk-grid-small uk-child-width-1-2 uk-padding-small" uk-grid>
       <div>
         <h4>فلترة نتائج البحث</h4>
         <p class="uk-text-small uk-text-muted">
@@ -32,8 +32,8 @@
         </p>
         <input class="uk-input uk-width-3-4 uk-border-rounded" type="text" placeholder="أدخل اسم المستخدم هنا">
       </div>
-      <div class="uk-margin-small-top uk-text-left">
-        <a href="{{ route('courses.create') }}" class="uk-button uk-button-default uk-border-rounded">
+      <div class="uk-margin-small-top">
+        <a href="{{ route('courses.create') }}" class="uk-button uk-button-default uk-border-rounded uk-float-left">
           <span uk-icon="icon: plus" class="uk-margin-small-left"></span>
           أضف دورة جديدة
         </a>

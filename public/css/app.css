@@ -15385,3 +15385,11 @@ input[placeholder],
   background-color: #184258;
 }
 
+.ql-container .ql-editor {
+  direction: ltr;
+}
+
+.ql-container p {
+  font-family: "bein", sans-serif !important;
+}
+

@@ -16,18 +16,7 @@ class LessonsController extends Controller
      */
     public function index()
     {
-        if(\Auth::user()->hasRole(['teacher', 'author', 'editor'])) {
-            $course = Course::whereUserId(\Auth::id())->get();
-            foreach($course as $single) {
-                $lessons = Lesson::whereCourseId($single->id)->get();
-                $lessons->groupBy('course_id');
-            }
-            
-        } else {
-             $lessons = Lesson::all();
-             $lessons->groupBy('course_id');
-        }
-        return view('manage.lessons.index')->withLessons($lessons);
+        //
     }
 
     /**
@@ -35,9 +24,11 @@ class LessonsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($course_id)
     {
-        return view('manage.lessons.create');
+        $lesson = Lesson::whereCourseId($course_id)->with('course')->first();
+        $course = Course::whereId($course_id)->first();
+        return view('manage.lessons.create')->withLesson($lesson)->withCourse($course);
     }
 
     /**
@@ -48,7 +39,25 @@ class LessonsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $lesson = new Lesson();
+
+        $lesson->title = $request->title;
+        $lesson->course_id = $request->course_id;
+        $lesson->slug = $request->slug;
+        $lesson->description = $request->description;
+        $lesson->lesson_content = $request->lesson_content;
+        if($request->lesson_video) {
+            $lesson->addMedia($request->lesson_video)->toMediaCollection('lesson_video');
+        }
+        if($request->free_lesson) {
+            $lesson->free_lesson = $request->free_lesson === "on" ? 1 : 0;
+        }
+        $lesson->publish = $request->publish === "on" ? 1 : 0;
+        $lesson->position = $request->position;
+        $lesson->type = $request->type;
+        $lesson->save();
+
+        return redirect()->route('lessons.show', $lesson->slug);
     }
 
     /**
@@ -57,9 +66,10 @@ class LessonsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $lesson = Lesson::where('slug', $slug)->first();
+        return view('manage.lessons.show')->withLesson($lesson);
     }
 
     /**

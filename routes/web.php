@@ -31,12 +31,11 @@ Route::prefix('manage')
         Route::resource('/permissions', 'Manage\PermissionsController');
 
         Route::resource('/courses', 'Manage\CoursesController');
-        
+
         Route::resource('/lessons', 'Manage\LessonsController');
-        Route::get('/lesson/{slug}', 'Manage\LessonsController@show')->name('lesson.show');
+        Route::get('/course/{course_id}/lessons/create', 'Manage\LessonsController@create')->name('lessons.create');
 });
 
 Route::resource('profile', 'Auth\ProfileController');
 
 Route::get('/home', 'HomeController@index')->name('home');
-

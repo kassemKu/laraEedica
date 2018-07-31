@@ -4,7 +4,7 @@
       أي أيديكا
       <small class="uk-text-small uk-text-muted">التعليمية</small>
     </h2>
-    
+
     <div class="uk-flex uk-flex-column uk-flex-middle uk-flex-center">
       <div>
         <ul class="uk-iconnav uk-margin-remove">
@@ -18,12 +18,12 @@
         </ul>
       </div>
     </div>
-    
+
     <div class="uk-width-1-1 uk-padding-small uk-padding-remove-horizontal">
       <ul class="uk-nav uk-nav-default">
         <li class="uk-nav-header">لوحة التحكم</li>
         <li>
-          <a href="#" 
+          <a href="#"
           class="{{ Request::path() === 'manage/dashboard' ? ' uk-text-warning' : '' }}">
             <span uk-icon="icon: cog; ratio: 1"></span>
             <span>الاعدادات العامة</span>
@@ -42,14 +42,7 @@
           <a href="{{ route('courses.index') }}"
           class="{{ Request::path() === 'manage/courses' ? 'uk-text-warning' : '' }}">
             <span uk-icon="icon: calendar; ratio: 1"></span>
-            <span>ادارة الدورات</span>
-          </a>
-        </li>
-        <li>
-          <a href="{{ route('lessons.index') }}"
-          class="{{ Request::path() == 'manage/lessons' ? 'uk-text-warning' : '' }}">
-            <span uk-icon="icon: settings; ratio: 1" class="uk-float-center"></span>
-            <span>ادارة الدروس</span>
+            <span>ادارة الدورات و الدروس</span>
           </a>
         </li>
         @role(['superadministrator', 'administrator'])
@@ -78,6 +71,6 @@
         </li>
       </ul>
     </div>
-    
+
   </div>
 </aside>

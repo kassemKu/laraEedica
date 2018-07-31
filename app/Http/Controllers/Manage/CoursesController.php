@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Manage;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Course;
+use App\Lesson;
 use App\User;
 use DB;
 use App\Http\Requests\CourseValidation;
@@ -23,7 +24,7 @@ class CoursesController extends Controller
         } else {
             $courses = Course::with('user')->latest()->paginate(10);
         }
-        
+
         return view('manage.courses.index')->withCourses($courses);
     }
 
@@ -74,7 +75,8 @@ class CoursesController extends Controller
     {
         $course= Course::where('id', $id)->first();
         $teacher = User::where('id', $course->user_id)->first();
-        return view('manage.courses.show', compact('teacher', 'course'));
+        $lessons = Lesson::whereCourseId($course->id)->orderBy('position')->get();
+        return view('manage.courses.show', compact('teacher', 'course', 'lessons'));
     }
 
     /**

@@ -2,7 +2,7 @@
   @include('client/sections/toTop')
 </div>
 
-<footer class="uk-grid-small uk-child-width-1-3@m uk-text-center uk-padding uk-light" uk-grid>
+<footer class="uk-grid-small uk-child-width-1-3@m uk-text-center uk-padding uk-light uk-margin-top-medium uk-height-medium" uk-grid>
   <div>
     <h1>
       أي أيديكا

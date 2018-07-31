@@ -120,3 +120,12 @@ input[placeholder], .uk-textarea {
 .ee-footer {
   background-color: $blue-color;
 }
+
+
+// EDITOR VUE
+.ql-container .ql-editor {
+  direction: ltr;
+}
+.ql-container p {
+  font-family: $global-font-family !important;
+}

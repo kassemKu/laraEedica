@@ -1,4 +1,4 @@
-<div class="ee-courses uk-container uk-margin-xlarge-top">
+<div class="ee-courses uk-container uk-margin-medium-top">
   <div class="uk-text-center">
     <h1 class="ee-light uk-margin-large-bottom">دورات أي ايديكا</h1>
   </div>

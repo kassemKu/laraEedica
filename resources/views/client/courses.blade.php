@@ -3,7 +3,7 @@
 @section('content')
 @section('title', 'All Courses')
 @section('content')
-<div class="uk-container-expand uk-padding-small" id="courses">
+<div class="uk-container-expand uk-padding" id="courses">
   <div class="uk-child-width-1-1" uk-grid>
     {{-- <div>
       <h2>
@@ -114,44 +114,58 @@
                 </p>
               </div>
             </div>
-            <div class="uk-background-default uk-padding-small uk-width-1-1">
-              <p class="uk-article-meta" style="margin: 0px">تأليف الأستاذ:
-                <a href="#" class="uk-text-primary ee-en">{{ $course->user->name }}</a>
-                <span class="uk-margin-small-right">تم النشر يتاريخ:
-                  <span class="ee-en uk-text-primary">
-                    {{ $course->created_at->toFormattedDateString() }}
-                  </span>
-                </span>
-              </p>
-              <p>
-                @if($course->free_course)
-                  <span class="uk-margin-right uk-label uk-background-muted ee-border uk-text-success">
-                    دورة مجانية
-                  </span>
-                @endif
-              </p>
+
+            <div class="uk-background-default uk-padding-small">
+              <div class="uk-grid-small" uk-grid>
+                <div class="uk-width-2-3">
+                  <p class="uk-article-meta" style="margin: 0px">تأليف الأستاذ:
+                    <a href="#" class="uk-text-primary ee-en">{{ $course->user->name }}</a>
+                    <span class="uk-margin-small-right">تم النشر يتاريخ:
+                      <span class="ee-en uk-text-primary">
+                        {{ $course->created_at->toFormattedDateString() }}
+                      </span>
+                    </span>
+                  </p>
+                </div>
+                <div class="uk-width-1-3">
+                  <p class="uk-float-left">
+                    @if($course->free_course)
+                      <span class="uk-margin-right uk-label uk-background-muted ee-border uk-text-success">
+                        دورة مجانية
+                      </span>
+                    @endif
+                  </p>
+                </div>
+              </div>
+  
               <p class="ee-en">{{ $course->description }}</p>
-              <div class="uk-grid-small uk-child-width-1-2 uk-margin-top" uk-grid>
-                <p>
-                  <a href="#">
-                    <span uk-icon="icon: arrow-left; ratio: 1.5;" class="uk-text-danger uk-text-bold"></span>
-                    تفاصيل الدورة
-                  </a>
-                </p>
-                @if($course->price)
-                  <p>
+
+              <div class="uk-grid-small uk-margin-top" uk-grid>
+                <div class="uk-width-1-3">
+                  <p class="uk-margin-small-top">
+                    <a href="#">
+                      <span uk-icon="icon: arrow-left; ratio: 1.5;" class="uk-text-danger uk-text-bold"></span>
+                      تفاصيل الدورة
+                    </a>
+                  </p>
+                </div>
+                <div class="uk-width-2-3">
+                  @if($course->price)
+                  <p class="uk-float-left">
                     <a href="#" class="uk-button ee-border-blue uk-text-primary">
                       شراء الدورة
                       <span class="ee-en  uk-text-danger">{{ $course->price }}$</span>
                     </a>
                   </p>
-                @else
-                  <p>
-                    <a href="#" class="uk-button ee-border-blue uk-text-success">
-                      اشترك في الدورة
-                    </a>
-                  </p>
-                @endif
+                  @else
+                    <p class="uk-float-left">
+                      <a href="#" class="uk-button ee-border-blue uk-text-success">
+                        اشترك في الدورة
+                      </a>
+                    </p>
+                  @endif
+                </div>
+               
               </div>
             </div>
           </div>

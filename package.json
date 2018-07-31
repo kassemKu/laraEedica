@@ -16,5 +16,8 @@
         "lodash": "^4.17.4",
         "uikit": "^3.0.0-rc.6",
         "vue": "^2.5.7"
+    },
+    "dependencies": {
+        "vue2-editor": "^2.5.0"
     }
 }

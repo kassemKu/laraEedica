@@ -145,7 +145,7 @@
         <button
         type="submit"
         class="uk-button uk-button-default ee-border-blue uk-width-1-1 uk-margin-top uk-border-rounded">
-        اضافة الدورة
+         حفظ التعديلات
         </button>
       </div>
 

@@ -17,6 +17,7 @@ return array(
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\Manage\\CoursesController' => $baseDir . '/app/Http/Controllers/Manage/CoursesController.php',
+    'App\\Http\\Controllers\\Manage\\LessonsController' => $baseDir . '/app/Http/Controllers/Manage/LessonsController.php',
     'App\\Http\\Controllers\\Manage\\ManageController' => $baseDir . '/app/Http/Controllers/Manage/ManageController.php',
     'App\\Http\\Controllers\\Manage\\PermissionsController' => $baseDir . '/app/Http/Controllers/Manage/PermissionsController.php',
     'App\\Http\\Controllers\\Manage\\RolesController' => $baseDir . '/app/Http/Controllers/Manage/RolesController.php',

@@ -9,7 +9,6 @@ use Spatie\MediaLibrary\HasMedia\HasMedia;
 
 class Course extends Model implements HasMedia
 {
-
     use HasMediaTrait;
 
     protected $table = 'courses';
@@ -18,9 +17,9 @@ class Course extends Model implements HasMedia
         'course_start', 'publish', 'user_id'
     ];
 
-    
+
     protected $hidden = [];
-    
+
     public function user()
     {
         return $this->belongsTo('App\User');
@@ -30,10 +29,11 @@ class Course extends Model implements HasMedia
         return $this->hasMany('App\Lesson');
     }
 
-    public function scopePublish($query) {
+    public function scopePublish($query)
+    {
         return $query->where('publish', '>', 0);
     }
-    
+
     public function registerMediaCollections()
     {
         $this
@@ -47,6 +47,5 @@ class Course extends Model implements HasMedia
                     ->width(1260)
                     ->height(450);
             });
-            
     }
 }
